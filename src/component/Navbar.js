@@ -7,7 +7,7 @@ const Navbar = () => {
   let location=useLocation();//will give an obj having the pathname same as to value
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="/">
             MY stuff
