@@ -1,11 +1,14 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
-const home = () => {
+import React from "react"
+import Notes from "./Notes"
+import AddNotes from "./AddNotes"
+
+const Home = (props) => {
   return (
     <div>
-      this is home
+      <AddNotes showAlert={props.showAlert}/>
+    <Notes  showAlert={props.showAlert}/>
     </div>
   )
 }
 
-export default home
+export default Home
