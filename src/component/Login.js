@@ -31,7 +31,8 @@ const Login = (props) => {
     setCredentails({...credentails,[e.target.name]:e.target.value})//3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
 }
   return (
-    <div>
+    <div className='mt-3'>
+      <h2 className='mb-4'>Login to Mystuff.com</h2>
       <form onSubmit={handleSubmit}>{/*onclick can also be used on button because all of them are listener but onsubmit gives and min length require*/}
   <div className="mb-3">
     <label htmlFor="username" className="form-label">Username</label>
@@ -47,7 +48,7 @@ const Login = (props) => {
   </div>
   <button type="submit" className="btn btn-primary">Login</button>
 </form>
-<div className='my-3'>If you don't have an account then <Link to="/signin" className='text-primary'>Signin</Link></div>
+<div className='my-3'>If you don't have an account then <Link to="/signup" className='text-primary'>SignUp</Link></div>
     </div>
   )
 }

@@ -44,6 +44,7 @@ const deleteNote=async(id)=>{
     },
   });
   const json=await response.json();
+  console.log(json)
 //logic to delete
   const newNotes=note.filter((note)=>{ return note._id!==id});//this will remove the object with passed id from note array
   setNote(newNotes)
@@ -60,6 +61,8 @@ const editNote=async (id,title,tag,description)=>{
        body: JSON.stringify({title,tag,description}), // body data type must match "Content-Type" header
   });
   const json=await response.json()
+  console.log(json)
+
   //to show the updated notes in the ui
   let newNotes=JSON.parse(JSON.stringify(note))
 //logic to edit

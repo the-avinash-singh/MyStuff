@@ -36,7 +36,8 @@ const Signup = (props) => {
     setCredentails({...credentails,[e.target.name]:e.target.value})//3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
 }
   return (
-    <div>
+    <div className='mt-3'>
+      <h2 className='mb-4'>Signin to Mystuff.com</h2>
       <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="name" className="form-label">Name</label>
@@ -59,7 +60,7 @@ const Signup = (props) => {
     <input type="password" className="form-control" id="cpassword" name="cpassword" value={credentails.cpassword} onChange={onChange} required minLength={6}/>
     <span className={`text-danger ${match?"d-none":""}`}>Password missmatch.</span>
   </div>
-  <button type="submit" className="btn btn-primary">SignIn</button>
+  <button type="submit" className="btn btn-primary">SignUp</button>
 </form>
     </div>
   )
