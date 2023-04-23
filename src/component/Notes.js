@@ -68,7 +68,7 @@ const Notes = (props) => {
   </div>
 </div>
       <div className="container row my-3">
-      <h1>Your notes</h1>
+      <h1>Your Safe's stuff</h1>
       <div className="container mx-2">
       {note.length===0 && "No Stuff to display"}
       </div>

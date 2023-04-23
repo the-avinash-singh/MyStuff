@@ -114,7 +114,6 @@ router.post(
 try {
   userId=req.user.id;
   const user=await User.findById(userId).select("-password");
-  Success=true;
   res.send(user)
 } catch (error) {
   console.error(error)

@@ -32,7 +32,7 @@ const Login = (props) => {
 }
   return (
     <div className='mt-3'>
-      <h2 className='mb-4'>Login to Mystuff.com</h2>
+      <h2 className='mb-4'>Login to Mystuffsafe.com</h2>
       <form onSubmit={handleSubmit}>{/*onclick can also be used on button because all of them are listener but onsubmit gives and min length require*/}
   <div className="mb-3">
     <label htmlFor="username" className="form-label">Username</label>

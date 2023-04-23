@@ -15,7 +15,7 @@ navigate("/login")
       <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="/">
-            Mystuff
+            Mystuffsafe
           </Link>
           <button
             className="navbar-toggler"
@@ -39,7 +39,7 @@ navigate("/login")
                 <Link className={`nav-link text-white ${location.pathname==="/about"?"active":""}`} to="/about">
                   About
                 </Link>
-              </li>
+                </li>
             </ul>
            {!localStorage.getItem("token")?<form className="d-flex" role="search">
               <Link className="btn btn-primary mx-1" to="/login" role="button">

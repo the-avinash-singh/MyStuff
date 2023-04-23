@@ -17,7 +17,7 @@ const AddNotes = (props) => {
   return (
     <div>
        <div className="container my-3">
-      <h1>Add a Note</h1>
+      <h1>Add To your Stuff</h1>
       <form className='my-3'>
   <div className="form-group">
     <label htmlFor="title">Title</label>
@@ -31,7 +31,7 @@ const AddNotes = (props) => {
     <label htmlFor="description">Write the stuff</label>
     <input type="text" className="form-control mb-3" id="description" name="description" placeholder="example:Have to go for walk" value={note.description} onChange={onChange} minLength={5} required/>{/*name jo h wo state ke jisa hi hoga taki value setki ja sake*/}
   </div>
-  <button disabled={note.title.length<2 || note.description.length<5} type="submit" className="btn btn-primary" onClick={clikced}>Add it<i className="fa-solid fa-circle-plus mx-2"></i></button>
+  <button disabled={note.title.length<2 || note.description.length<5} type="submit" className="btn btn-primary" onClick={clikced}>Add to safe<i className="fa-solid fa-circle-plus mx-2"></i></button>
 </form>
 </div>
     </div>
