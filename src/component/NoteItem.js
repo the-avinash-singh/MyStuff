@@ -6,8 +6,8 @@ const NoteItem = (props) => {
   const {deleteNote}=context;
    const {note,updateNote,showAlert}=props;
   return (
-    <div className='col-md-3 w-50'>
-      <div className="card my-3">
+    <div className='col-md-6 col-lg-6 w-md-full w-lg-full'>
+      <div className="card my-3 shadow-sm">
       <div style={{
             display:"flex",
             justifyContent:"flex-end",

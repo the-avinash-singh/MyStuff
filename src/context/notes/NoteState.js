@@ -76,7 +76,7 @@ const editNote=async (id,title,tag,description)=>{
     }
   }
   setNote(newNotes);
-}
+  }
    //here the value is what send for providing data
       return (<NoteContext.Provider value={{note,addNote,deleteNote,editNote,getNote}}> 
         {props.children}
