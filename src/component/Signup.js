@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 
 const Signup = (props) => {
   const[credentails,setCredentails]=useState({name:"",username:"",email:"",password:"",cpassword:""})
@@ -62,6 +62,7 @@ const Signup = (props) => {
   </div>
   <button type="submit" className="btn btn-primary">SignUp</button>
 </form>
+<div className='my-3'>Already have an account then <Link to="/login" className='text-primary'>login</Link></div>
     </div>
   )
 }
