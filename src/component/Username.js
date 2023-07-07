@@ -18,8 +18,8 @@ const Username = () => {
     user();
   }
   return (
-    <div className='container p-2 rounded shadow-sm ' >
-      <span className='fw-semibold fs-2'>Welcome to your Stuff:</span>
+    <div className='container mb-5' >
+      <span className='fw-semibold fs-2'>Welcome to Mystuffsafe:</span>
  <span className="fs-2 mx-2">{credentails.username}</span>
     </div>
   )

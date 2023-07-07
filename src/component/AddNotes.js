@@ -31,7 +31,7 @@ const AddNotes = (props) => {
     <label htmlFor="description">Write the stuff</label>
     <input type="text" className="form-control mb-3" id="description" name="description" placeholder="example:Have to go for walk" value={note.description} onChange={onChange} minLength={5} required/>{/*name jo h wo state ke jisa hi hoga taki value setki ja sake*/}
   </div>
-  <button disabled={note.title.length<2 || note.description.length<5} type="submit" className="btn btn-primary" onClick={clikced}>Add to safe<i className="fa-solid fa-circle-plus mx-2"></i></button>
+  <button disabled={note.title.length<2 || note.description.length<5} type="submit" className="btn btn-primary shadow" onClick={clikced}>Add to safe<i className="fa-solid fa-circle-plus mx-2"></i></button>
 </form>
 </div>
     </div>
