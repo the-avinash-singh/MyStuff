@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
 const NoteState=(props)=>{
-  const host="http://localhost:5000"
+  const host="https://papaya-clafoutis-a6d82a.netlify.app"
 
  const notesInitial= []
   const [note,setNote]=useState(notesInitial)
