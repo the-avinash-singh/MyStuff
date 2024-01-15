@@ -7,16 +7,21 @@ const NoteState=(props)=>{
   const [note,setNote]=useState(notesInitial)
 //get all notes
   const getNote=async()=>{
-    //call the api
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        "auth-token":localStorage.getItem("token")
-      }
-    });
-    const json=await response.json();
-    setNote(json);
+    try {
+      
+      //call the api
+      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+        method: "GET", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token":localStorage.getItem("token")
+        }
+      });
+      const json=await response.json();
+      setNote(json);
+    } catch (error) {
+      console.log(error)
+    }
   }
   //add note
 const addNote=async(title,description,tag)=>{
