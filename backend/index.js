@@ -1,4 +1,4 @@
-const connectTOMongo = require("./db").default;
+const connectTOMongo = require("./db");
 const express = require("express");
 var cors = require('cors')
 

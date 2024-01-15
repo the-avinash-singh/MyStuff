@@ -1,4 +1,4 @@
-import { connect } from "mongoose";
+const mongoose = require("mongoose");
 
 const mongoURI =
   "mongodb+srv://admin:pass@cluster0.hakuxin.mongodb.net/mystuff?retryWrites=true&w=majority";
@@ -6,7 +6,7 @@ const mongoURI =
 const connectTOMongo = () => {
   main().catch((err) => console.log(err));
   async function main() {
-    await connect(mongoURI).then(() => console.log("connected"));
+    await mongoose.connect(mongoURI).then(() => console.log("connected"));
   }
 };
-export default connectTOMongo;
+module.exports = connectTOMongo;
