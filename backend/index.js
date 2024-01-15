@@ -9,6 +9,11 @@ connectTOMongo();
 const app = express();
 const port = 5000;
 //resolving cors policy error
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.options('*', cors())
 //passing the middlewear
 app.use(express.json());
