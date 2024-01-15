@@ -4,7 +4,7 @@ const Username = () => {
   const[credentails,setCredentails]=useState({username:""})
   const user=async()=>{
     const response = await fetch(`https://my-stuff-two.vercel.app/api/auth/getuser`, {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
         "auth-token":localStorage.getItem("token")
