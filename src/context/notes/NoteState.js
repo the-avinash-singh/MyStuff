@@ -8,7 +8,7 @@ const NoteState=(props)=>{
 //get all notes
   const getNote=async()=>{
     //call the api
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await Fetch(`${host}/api/notes/Fetchallnotes`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const NoteState=(props)=>{
   //add note
 const addNote=async(title,description,tag)=>{
   //call the api
-  const response = await fetch(`${host}/api/notes/addnote`, {
+  const response = await Fetch(`${host}/api/notes/addnote`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ setNote(note.concat(notes));//this will update and add in the note array not in 
   //delete note
 const deleteNote=async(id)=>{
   //call the api
-  const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+  const response = await Fetch(`${host}/api/notes/deletenote/${id}`, {
     method: "DELETE", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const deleteNote=async(id)=>{
 //edit note
 const editNote=async (id,title,tag,description)=>{
   //api call
-  const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+  const response = await Fetch(`${host}/api/notes/updatenote/${id}`, {
     method: "PUT", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",
