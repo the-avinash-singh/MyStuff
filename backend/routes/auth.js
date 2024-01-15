@@ -6,6 +6,7 @@ const User = require("../models/User");
 const { body, validationResult } = require("express-validator"); //for data validation
 const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
+const cors = require("../middleware/corsHandller")
 
 const jwt_secret = "yaha_pe_signature"; //we have to use .env files to store
 
