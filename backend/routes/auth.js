@@ -4,7 +4,7 @@ var bcrypt = require("bcryptjs"); //for validation
 const jwt = require("jsonwebtoken"); //for lodin token
 const User = require("../models/User");
 const { body, validationResult } = require("express-validator"); //for data validation
-const fetchuser = require("../middleware/fetchUser");
+const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
 
 const jwt_secret = "yaha_pe_signature"; //we have to use .env files to store
