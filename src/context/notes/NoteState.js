@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
 const NoteState=(props)=>{
-  const host="https://my-stuff-two.vercel.app"
+  const host=" https://render.com/docs/web-services#port-detection"
 
  const notesInitial= []
   const [note,setNote]=useState(notesInitial)
