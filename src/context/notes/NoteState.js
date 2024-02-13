@@ -3,8 +3,7 @@ import NoteContext from "./noteContext";
 const NoteState=(props)=>{
   const host="https://backend-5pjd.onrender.com"
 
- const notesInitial= []
-  const [note,setNote]=useState(notesInitial)
+  const [note,setNote]=useState([])
 //get all notes
   const getNote=async()=>{
     try {

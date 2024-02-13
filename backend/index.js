@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.json());
 
 //here different routes used to choose specified backend-file for different end points.
-app.use("/",require("./routes/welcome"))
+app.use("/",require("./routes/welcome"));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 

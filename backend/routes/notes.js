@@ -71,7 +71,7 @@ if(note.user.toString()!==req.user.id){
 
 
 //ROUTE 4:to delete a note:Delete "/api/notes/updatenote/id" . login required
-router.delete("/deletenote/:id",cors,fetchuser,async (req,res)=>{
+router.delete("/deletenote/:id",fetchuser,async (req,res)=>{
 
 try {
 //verifying user
