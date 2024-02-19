@@ -17,7 +17,7 @@ const NoteState=(props)=>{
         }
       });
       const json=await response.json();
-      setNote(json);
+      setNote(json.reverse());
     } catch (error) {
       console.log(error)
     }
