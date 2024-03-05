@@ -8,6 +8,7 @@ const Navbar = () => {
   let location=useLocation();//will give an obj having the pathname same as to value
   const logout=()=>{
 localStorage.removeItem("token")
+localStorage.removeItem("name")
 navigate("/login")
   }
   return (
