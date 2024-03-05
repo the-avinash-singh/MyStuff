@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
 const NoteState=(props)=>{
-  const host="http://localhost:10000"
+  const host="https://backend-5pjd.onrender.com:10000"
 
   const [note,setNote]=useState([])
 //get all notes

@@ -14,7 +14,7 @@ const Signup = (props) => {
     e.preventDefault();
     const { name, username, email, password } = credentails;
     const response = await fetch(
-      `http://localhost:10000/api/auth/creataccount`,
+      `https://backend-5pjd.onrender.com/api/auth/creataccount`,
       {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
