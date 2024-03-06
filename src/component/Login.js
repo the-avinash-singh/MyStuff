@@ -32,7 +32,7 @@ const Login = (props) => {
     setCredentails({...credentails,[e.target.name]:e.target.value})//3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
 }
   return (
-    <div className='mt-5 mx-auto shadow p-4 rounded-4'>
+    <div className='mt-5 mx-auto bg-light shadow p-4 rounded-4'>
       <h2 className='mb-4'>Login to Mystuffsafe.com</h2>
       <form onSubmit={handleSubmit}>{/*onclick can also be used on button because all of them are listener but onsubmit gives and min length require*/}
   <div className="mb-3">

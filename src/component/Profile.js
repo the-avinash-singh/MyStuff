@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
+  let navigate=useNavigate();
+  useEffect(()=>{
+    if(localStorage.getItem("token")===null){
+      navigate("/login")
+    }})
   const [credentails, setCredentails] = useState({
     name: "",
     username: "",
@@ -60,18 +66,68 @@ const Profile = (props) => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("token"),
         },
-        body: JSON.stringify({ name: credentails.name }),
       }
     );
     const json = await response.json();
     setCredentails(json);
   };
+  const del = async () => {
+    const response = await fetch(
+      `https://backend-5pjd.onrender.com/api/auth/`,
+      {
+        method: "DELETE", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
+      }
+    );
+    const json = await response.json();
+    if (json.Success) {
+      //Save and redirect
+      localStorage.removeItem("token"); //here we have saved the auth token in local storage.
+      localStorage.removeItem("name");
+      props.showAlert("Account deleted successfully", "success");
+    } else {
+      props.showAlert("invalid cradentials", "danger");
+    }
+
+  };
   if (credentails.username === "") {
     user();
   }
+  const ref=useRef(null)
+  const refClose=useRef(null)
+  const clikced=(e)=>{
+    ref.current.click()
+    refClose.current.click()
+    e.preventDefault();//this will prevent page reloading
+    del();
+}
 
   return (
-    <div className="mt-3 mx-auto shadow p-4 rounded-4 mb-3">
+    <div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-3">
+      
+      <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel">Alert</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      Delete this account permanently.
+      </div>
+      <div className="text-danger pt-0 modal-body">This action can't be undone</div>
+      <div className="modal-footer d-flex justify-content-between">
+        <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-danger" onClick={clikced}>Delete it</button>
+      </div>
+    </div>
+  </div>
+</div>
+
       <h2 className="mb-4">Your Profile</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -179,10 +235,9 @@ const Profile = (props) => {
           <div className="btn btn-primary" onClick={editCick}>
             Edit Profile
           </div>
-          <button className="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Profile</button>
+          <button className="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={clikced}>Delete Profile</button>
         </div>
       )}
-  {/* <DeleteModel/> */}
     </div>
   );
 };

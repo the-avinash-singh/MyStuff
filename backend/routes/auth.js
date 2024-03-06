@@ -204,10 +204,12 @@ router.put(
 
 router.delete("/", fetchuser, async (req, res) => {
   try {
+    let success=false;
     const user = await User.findByIdAndDelete(req.user.id);
     if (!user) return res.status(400).send("invalid id");
     await Note.deleteMany({'user':user._id});
-    res.send(user);
+    success=true;
+    res.json({success,user});
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "internal server error" });
