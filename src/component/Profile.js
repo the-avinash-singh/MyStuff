@@ -1,12 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
   let navigate=useNavigate();
-  useEffect(()=>{
-    if(localStorage.getItem("token")===null){
-      navigate("/login")
-    }})
   const [credentails, setCredentails] = useState({
     name: "",
     username: "",
@@ -87,6 +83,7 @@ const Profile = (props) => {
       //Save and redirect
       localStorage.removeItem("token"); //here we have saved the auth token in local storage.
       localStorage.removeItem("name");
+      navigate("/login");
       props.showAlert("Account deleted successfully", "success");
     } else {
       props.showAlert("invalid cradentials", "danger");
@@ -100,7 +97,10 @@ const Profile = (props) => {
   const refClose=useRef(null)
   const clikced=(e)=>{
     ref.current.click()
-    refClose.current.click()
+    e.preventDefault();//this will prevent page reloading
+}
+const delClick=()=>{
+  refClose.current.click()
     e.preventDefault();//this will prevent page reloading
     del();
 }
@@ -122,7 +122,7 @@ const Profile = (props) => {
       <div className="text-danger pt-0 modal-body">This action can't be undone</div>
       <div className="modal-footer d-flex justify-content-between">
         <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-danger" onClick={clikced}>Delete it</button>
+        <button type="button" className="btn btn-danger" onClick={delClick}>Delete it</button>
       </div>
     </div>
   </div>
