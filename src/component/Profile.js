@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
-  let navigate=useNavigate();
+  let navigate = useNavigate();
   const [credentails, setCredentails] = useState({
     name: "",
     username: "",
@@ -62,7 +62,7 @@ const Profile = (props) => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("token"),
         },
-        body: JSON.stringify({name:credentails.name})
+        body: JSON.stringify({ name: credentails.name }),
       }
     );
     const json = await response.json();
@@ -79,55 +79,80 @@ const Profile = (props) => {
         },
       }
     );
-    const json = await response.json();
-    if (json.success) {
-      //Save and redirect
-      localStorage.removeItem("token"); //here we have saved the auth token in local storage.
-      localStorage.removeItem("name");
-      props.showAlert("Account deleted successfully", "success");
-      navigate("/login");
-    } else {
-      props.showAlert("invalid cradentials", "danger");
-    }
-
+    //Save and redirect
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    navigate("/login");
+    props.showAlert("Account deleted successfully", "success");
   };
   if (credentails.username === "") {
     user();
   }
-  const ref=useRef(null)
-  const refClose=useRef(null)
-  const clikced=(e)=>{
-    ref.current.click()
-    e.preventDefault();//this will prevent page reloading
-}
-const delClick=(e)=>{
-  refClose.current.click()
-    e.preventDefault();//this will prevent page reloading
+  const ref = useRef(null);
+  const refClose = useRef(null);
+  const clikced = (e) => {
+    ref.current.click();
+    e.preventDefault(); //this will prevent page reloading
+  };
+  const delClick = (e) => {
+    refClose.current.click();
+    e.preventDefault(); //this will prevent page reloading
     del();
-}
+  };
 
   return (
     <div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-3">
-      
-      <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
-<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div className="modal-dialog modal-dialog-centered">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Alert</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button
+        type="button"
+        ref={ref}
+        className="btn btn-primary d-none"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      />
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">
+                Alert
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">Delete this account permanently.</div>
+            <div className="text-danger pt-0 modal-body">
+              This action can't be undone
+            </div>
+            <div className="modal-footer d-flex justify-content-between">
+              <button
+                type="button"
+                ref={refClose}
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={delClick}
+              >
+                Delete it
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="modal-body">
-      Delete this account permanently.
-      </div>
-      <div className="text-danger pt-0 modal-body">This action can't be undone</div>
-      <div className="modal-footer d-flex justify-content-between">
-        <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-danger" onClick={delClick}>Delete it</button>
-      </div>
-    </div>
-  </div>
-</div>
 
       <h2 className="mb-4">Your Profile</h2>
       <form onSubmit={handleSubmit}>
@@ -236,7 +261,14 @@ const delClick=(e)=>{
           <div className="btn btn-primary" onClick={editCick}>
             Edit Profile
           </div>
-          <button className="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={clikced}>Delete Profile</button>
+          <button
+            className="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            onClick={clikced}
+          >
+            Delete Profile
+          </button>
         </div>
       )}
     </div>
