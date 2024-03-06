@@ -9,10 +9,16 @@ const Signup = (props) => {
     password: "",
     cpassword: "",
   });
+  //password confermation
+  let match = true;
+  if (credentails.cpassword !== credentails.password) {
+    match = false;
+  }
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, username, email, password } = credentails;
+    // if(!match)return
     const response = await fetch(
       `https://backend-5pjd.onrender.com/api/auth/creataccount`,
       {
@@ -35,11 +41,6 @@ const Signup = (props) => {
       props.showAlert("invalid cradentials", "danger");
     }
   };
-  //password confermation
-  let match = true;
-  if (credentails.cpassword !== credentails.password) {
-    match = false;
-  }
   const onChange = (e) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value }); //3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
   };

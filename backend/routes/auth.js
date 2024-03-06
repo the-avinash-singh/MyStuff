@@ -120,6 +120,21 @@ router.post(
     }
   }
 );
+
+router.post(
+  "/getuser",
+  fetchuser,
+  async (req, res) => {
+try {
+  userId=req.user.id;
+  const user=await User.findById(userId).select("-password");
+  res.send(user)
+} catch (error) {
+  console.error(error)
+  res.status(500).json({error:"internal server error"})
+}
+  });
+
 router.put(
   "/update",
   fetchuser,
@@ -169,7 +184,7 @@ router.put(
           password: secpass,
         },
         { new: true }
-      );
+      ).select('-password');
 
       if (!user) return res.status(400).send("inavalid data");
       const jwtdata = {

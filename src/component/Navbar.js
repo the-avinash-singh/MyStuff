@@ -41,6 +41,11 @@ navigate("/login")
                   About
                 </Link>
                 </li>
+                <li>
+                <Link className={`nav-link text-white ${location.pathname==="/profile"?"active":""}`} to="/profile">
+                  Profile
+                </Link>
+                </li>
             </ul>
             <a href="https://github.com/the-avinash-singh/MyStuff" target="blank"><img src={gitLogo} alt="git" className="logo d-block mb-3 mb-lg-0"/></a>
            {!localStorage.getItem("token")?<form className="d-flex" role="search">

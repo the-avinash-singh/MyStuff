@@ -8,6 +8,7 @@ import Alert from './component/Alert';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import { useState } from 'react';
+import Profile from './component/Profile';
 function App() {
   const[alert,setAlert]=useState(null);
   const showAlert=(message,type,color)=>{
@@ -33,6 +34,7 @@ color:color,
       <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}></Route>
       <Route exact path='/' element={<Home showAlert={showAlert}/>}></Route>
       <Route exact path='/about' element={<About/>}></Route>
+      <Route exact path='/Profile' element={<Profile/>}></Route>
       </Routes>
       </div>
     </Router>
