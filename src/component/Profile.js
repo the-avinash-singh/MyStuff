@@ -78,7 +78,9 @@ const Profile = (props) => {
           "auth-token": localStorage.getItem("token"),
         },
       }
-    );
+      );
+      const json = await response.json();
+      console.log(json);
     //Save and redirect
     localStorage.removeItem("token");
     localStorage.removeItem("name");
