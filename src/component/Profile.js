@@ -80,12 +80,12 @@ const Profile = (props) => {
       }
     );
     const json = await response.json();
-    if (json.Success) {
+    if (json.success) {
       //Save and redirect
       localStorage.removeItem("token"); //here we have saved the auth token in local storage.
       localStorage.removeItem("name");
-      navigate("/login");
       props.showAlert("Account deleted successfully", "success");
+      navigate("/login");
     } else {
       props.showAlert("invalid cradentials", "danger");
     }

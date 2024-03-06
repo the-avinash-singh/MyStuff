@@ -20,7 +20,7 @@ const Username = () => {
   if(credentails===''){
       user();
     }
-    
+
     if(localStorage.getItem('name')!==credentails.name){
       localStorage.setItem('name',credentails.name)
     }
