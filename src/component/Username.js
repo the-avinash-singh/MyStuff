@@ -19,11 +19,12 @@ const Username = () => {
   };
   if(credentails===''){
       user();
-      if(localStorage.getItem('name')!==credentails.name){
-        localStorage.setItem('name',credentails.name)
-      }
     }
-  
+    
+    if(localStorage.getItem('name')!==credentails.name){
+      localStorage.setItem('name',credentails.name)
+    }
+    
   return (
     <div className='container mb-5' >
       <span className='fw-semibold text-light fs-1'>Welcome to Mystuffsafe:</span>
