@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
   const [credentails, setCredentails] = useState({
@@ -19,7 +18,6 @@ const Profile = (props) => {
   if (credentails.cpassword !== credentails.password) {
     match = false;
   }
-  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, username, email, password } = credentails;
