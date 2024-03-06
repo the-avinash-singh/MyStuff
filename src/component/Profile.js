@@ -99,7 +99,7 @@ const Profile = (props) => {
     ref.current.click()
     e.preventDefault();//this will prevent page reloading
 }
-const delClick=()=>{
+const delClick=(e)=>{
   refClose.current.click()
     e.preventDefault();//this will prevent page reloading
     del();
