@@ -18,7 +18,7 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, username, email, password } = credentails;
-    // if(!match)return
+    if (!match) return;
     const response = await fetch(
       `https://backend-5pjd.onrender.com/api/auth/creataccount`,
       {
@@ -30,9 +30,9 @@ const Signup = (props) => {
       }
     );
     const json = await response.json();
-    console.log(json);
     if (json.Success) {
       //Save and redirect
+      setCredentails(json.user);
       localStorage.setItem("token", json.authtoken); //here we have saved the auth token in local storage.
       localStorage.setItem("name", json.name);
       props.showAlert("Account created successfully", "success");
@@ -43,6 +43,9 @@ const Signup = (props) => {
   };
   const onChange = (e) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value }); //3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
+    if (credentails.cpassword !== credentails.password) {
+      match = false;
+    }
   };
   return (
     <div className="mt-3 mx-auto shadow p-4 rounded-4 mb-3">
@@ -105,6 +108,9 @@ const Signup = (props) => {
             onChange={onChange}
             required
             minLength={6}
+            onCopy="return false"
+            onCut="return false"
+            onPaste="return false"
           />
         </div>
         <div className="mb-3">
@@ -125,7 +131,7 @@ const Signup = (props) => {
             Password missmatch.
           </span>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" disabled={!match}>
           SignUp
         </button>
       </form>

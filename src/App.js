@@ -34,7 +34,7 @@ color:color,
       <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}></Route>
       <Route exact path='/' element={<Home showAlert={showAlert}/>}></Route>
       <Route exact path='/about' element={<About/>}></Route>
-      <Route exact path='/Profile' element={<Profile/>}></Route>
+      <Route exact path='/Profile' element={<Profile showAlert={showAlert}/>}></Route>
       </Routes>
       </div>
     </Router>
