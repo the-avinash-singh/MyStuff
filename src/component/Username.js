@@ -16,14 +16,12 @@ const Username = () => {
     const json = await response.json();
     setCredentails(json);
   };
-  useEffect(()=>{
-    user();
-    if(credentails.name){
+  if(!credentails.name){
+      user();
       if(localStorage.getItem('name')!==credentails.name){
         localStorage.setItem('name',credentails.name)
       }
     }
-  })
   
   return (
     <div className='container mb-5' >
