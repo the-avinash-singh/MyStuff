@@ -35,7 +35,7 @@ const addNote=async(title,description,tag)=>{
       });
       const notes=await response.json()
 //logic to add
-setNote(note.unshift(notes));//this will update and add in the note array not in db
+setNote(note.concat(notes));//this will update and add in the note array not in db
 }
   //delete note
 const deleteNote=async(id)=>{
