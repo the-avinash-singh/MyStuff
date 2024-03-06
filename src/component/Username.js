@@ -24,7 +24,7 @@ const Username = () => {
         localStorage.setItem('name',credentails.name)
       }
     }
-  },[])
+  })
   
   return (
     <div className='container mb-5' >
