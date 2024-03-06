@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DeleteModel from "./DeleteModel";
 
 const Profile = (props) => {
   const [credentails, setCredentails] = useState({
