@@ -62,6 +62,7 @@ const Profile = (props) => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("token"),
         },
+        body: JSON.stringify({name:credentails.name})
       }
     );
     const json = await response.json();

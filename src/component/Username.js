@@ -11,12 +11,13 @@ const Username = () => {
           "Content-Type": "application/json",
           "auth-token": localStorage.getItem("token"),
         },
+        body: JSON.stringify({name:credentails.name})
       }
     );
     const json = await response.json();
     setCredentails(json);
   };
-  if(credentails.name===''){
+  if(credentails===''){
       user();
       if(localStorage.getItem('name')!==credentails.name){
         localStorage.setItem('name',credentails.name)
