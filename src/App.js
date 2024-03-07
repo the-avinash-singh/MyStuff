@@ -9,6 +9,7 @@ import Login from './component/Login';
 import Signup from './component/Signup';
 import { useState } from 'react';
 import Profile from './component/Profile';
+import Landing from './component/Landing';
 function App() {
   const[alert,setAlert]=useState(null);
   const showAlert=(message,type,color)=>{
@@ -30,11 +31,12 @@ color:color,
     <Alert alert={alert}/>
     <div className='container'>
       <Routes> 
-      <Route exact path='/login' element={<Login showAlert={showAlert}/>}></Route>
-      <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}></Route>
-      <Route exact path='/' element={<Home showAlert={showAlert}/>}></Route>
-      <Route exact path='/about' element={<About/>}></Route>
-      <Route exact path='/Profile' element={<Profile showAlert={showAlert}/>}></Route>
+      <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
+      <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
+      <Route exact path='/home' element={<Home showAlert={showAlert}/>}/>
+      <Route exact path='/about' element={<About/>}/>
+      <Route exact path='/Profile' element={<Profile showAlert={showAlert}/>}/>
+      <Route exact path="/" element={<Landing/>}/>
       </Routes>
       </div>
     </Router>

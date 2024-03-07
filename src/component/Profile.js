@@ -1,8 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
   let navigate = useNavigate();
+  useEffect(()=>{
+    if(localStorage.getItem("token")===null){
+      navigate("/login")
+    } 
+    // eslint-disable-next-line 
+  },[])
   const [credentails, setCredentails] = useState({
     name: "",
     username: "",

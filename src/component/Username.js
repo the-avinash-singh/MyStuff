@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Username = () => {
   const [credentails,setCredentails]=useState('')
@@ -17,14 +17,15 @@ const Username = () => {
     const json = await response.json();
     setCredentails(json);
   };
-  if(credentails===''){
-      user();
+  useEffect(()=>{
+    user();
+    if(credentails.name){
+      if(localStorage.getItem('name')!==credentails.name){
+        localStorage.setItem('name',credentails.name)
+      }
     }
-
-    if(localStorage.getItem('name')!==credentails.name){
-      localStorage.setItem('name',credentails.name)
-    }
-    
+    // eslint-disable-next-line 
+  },[])
   return (
     <div className='container mb-5' >
       <span className='fw-semibold text-light fs-1'>Welcome to Mystuffsafe:</span>

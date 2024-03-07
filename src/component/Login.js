@@ -20,7 +20,7 @@ const Login = (props) => {
  localStorage.setItem("token",json.authToken);//here we have saved the auth token in local storage. 
  localStorage.setItem('name',json.name);
  props.showAlert("Logged into your account successfully","success")
- navigate("/")
+ navigate("/home")
  e.preventDefault();
     }
     else{
