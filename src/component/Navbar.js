@@ -9,7 +9,7 @@ const Navbar = () => {
   const logout=()=>{
 localStorage.removeItem("token")
 localStorage.removeItem("name")
-navigate("/login")
+navigate("/")
   }
   return (
     <>

@@ -18,7 +18,10 @@ const Landing = () => {
   return (
     <>
     <div className=' shadow my-5 p-4 rounded-4 bg-light'>
-    <div className=' d-flex justify-content-between align-content-center'>
+    <div className=' d-md-flex flex-row-reverse justify-content-between align-content-center'>
+    <div className='d-flex justify-content-end  d-block d-md-inline'>
+    <img src={sideImg} alt='img' className='w-100'/>
+    </div>
     <div className='my-auto font-monospace w-50 text'>
     <h3 className='fw-bold'>
       Hello everyone we welcome you to Mystuffsafe:)
@@ -27,14 +30,11 @@ const Landing = () => {
     with the help of this site the user can easly access their notes, ideas on the go.
     <button className='btn btn-danger my-2 d-block' onClick={clicked}>Try Now</button>
     </div>
-    <div className='d-flex justify-content-end  d-none d-md-inline'>
-    <img src={sideImg} alt='img' className='w-100'/>
-    </div>
     </div>
     </div>
     <div className=' shadow my-5 p-4 rounded-4 bg-light'>
-    <div className=' d-flex justify-content-between align-content-center'>
-    <div className='d-flex justify-content-end  d-none d-md-inline'>
+    <div className=' d-md-flex justify-content-between align-content-center'>
+    <div className='d-flex justify-content-end  d-block d-md-inline'>
     <img src={sideImgEarth} alt='img' className='w-100'/>
     </div>
     <div className='my-auto font-monospace w-50 text text-md-end'>
