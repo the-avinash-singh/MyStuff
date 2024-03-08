@@ -33,7 +33,7 @@ export default function Footer()
   }
   return (
     <>
-      <div className='bg-black w-100 bottom-0 text-white px-3' style={{opacity: .6}}>
+      <div className='bg-black w-100 bottom-0 text-whitetarget ="blank"  px-3' style={{opacity: .6}}>
         <div className='fs-6 pt-2'>
           Made by Avinash Singh
         </div>
@@ -47,14 +47,14 @@ export default function Footer()
         </div>
             <div className='d-flex justify-content-center align-items-center mt-3 pb-5'>
           <ul className='me-4'>
-            <li><a href='https://stellular-biscuit-e8c785.netlify.app/' className='text-decoration-none text-white'>Viemo clone</a></li>
-            <li><a href='https://github.com/the-avinash-singh/Newswala.git' className='text-decoration-none text-white'>NewsWala</a></li>
-            <li><a href='https://github.com/the-avinash-singh/cropper.git' className='text-decoration-none text-white'>Cropper</a></li>
+            <li><a href='https://stellular-biscuit-e8c785.netlify.app/' target ="blank" className='text-decoration-none text-white'>Viemo clone</a></li>
+            <li><a href='https://github.com/the-avinash-singh/Newswala.git' target ="blank" className='text-decoration-none text-white'>NewsWala</a></li>
+            <li><a href='https://github.com/the-avinash-singh/cropper.git' target ="blank" className='text-decoration-none text-white'>Cropper</a></li>
           </ul>
           <ul>
-            <li><a href='https://github.com/the-avinash-singh/deliverit.git' className='text-decoration-none text-white'>DeliverIt</a></li>
-            <li><a href='https://github.com/the-avinash-singh/TextUtils.git' className='text-decoration-none text-white'>TextUtils</a></li>
-            <li><a href='https://github.com/the-avinash-singh/Excel-to-table.git' className='text-decoration-none text-white'>Excel-to-table</a></li>
+            <li><a href='https://github.com/the-avinash-singh/deliverit.git' target ="blank" className='text-decoration-none text-white'>DeliverIt</a></li>
+            <li><a href='https://github.com/the-avinash-singh/TextUtils.git' target ="blank" className='text-decoration-none text-white'>TextUtils</a></li>
+            <li><a href='https://github.com/the-avinash-singh/Excel-to-table.git' target ="blank" className='text-decoration-none text-white'>Excel-to-table</a></li>
           </ul>
             </div>
             <div className='d-flex justify-content-end align-items-end mt-3 pb-5'>
