@@ -20,7 +20,7 @@ navigate("/")
   }
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark z-0">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid" onClick={clicked}>
           <Link className="navbar-brand text-white" to="/">
             Mystuffsafe
