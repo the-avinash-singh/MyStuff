@@ -33,7 +33,7 @@ export default function Footer()
   }
   return (
     <>
-      <div className='bg-black w-100 bottom-0 text-whitetarget ="blank"  px-3' style={{opacity: .6}}>
+      <div className='bg-black w-100 bottom-0 text-white"  px-3' style={{opacity: .6}}>
         <div className='fs-6 pt-2'>
           Made by Avinash Singh
         </div>
