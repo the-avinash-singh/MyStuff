@@ -10,6 +10,7 @@ import Signup from './component/Signup';
 import { useState } from 'react';
 import Profile from './component/Profile';
 import Landing from './component/Landing';
+import Footer from './component/Footer';
 function App() {
   const[alert,setAlert]=useState(null);
   const showAlert=(message,type,color)=>{
@@ -39,6 +40,7 @@ color:color,
       <Route exact path="/" element={<Landing/>}/>
       </Routes>
       </div>
+      <Footer/>
     </Router>
     </NoteState>
     </>

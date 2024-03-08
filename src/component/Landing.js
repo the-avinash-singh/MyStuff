@@ -32,6 +32,7 @@ const Landing = () => {
     </div>
     </div>
     </div>
+    <div style={{height:"1px"}}></div>
     <div className=' shadow my-5 p-4 rounded-4 bg-light'>
     <div className=' d-md-flex justify-content-between align-content-center'>
     <div className='d-flex justify-content-end  d-block d-md-inline'>
@@ -46,6 +47,8 @@ const Landing = () => {
     </div>
     </div>
     </div>
+    <div style={{height:"40px"}}></div>
+
     </>
   )
 }

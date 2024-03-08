@@ -11,15 +11,22 @@ localStorage.removeItem("token")
 localStorage.removeItem("name")
 navigate("/")
   }
+
+  const clicked=() => {
+    const navbar = document.getElementById('navbarSupportedContent');
+    if (navbar.classList.contains('show')) {
+      navbar.classList.remove('show');
+    }
+  }
   return (
     <>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
-        <div className="container-fluid">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark z-0">
+        <div className="container-fluid" onClick={clicked}>
           <Link className="navbar-brand text-white" to="/">
             Mystuffsafe
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler focus-ring focus-ring-dark"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"

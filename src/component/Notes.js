@@ -67,7 +67,7 @@ const Notes = (props) => {
     </div>
   </div>
 </div>
-      <div className="container row my-3">
+      <div className="container row my-3 mb-5">
       <h1>Your Safe's stuff</h1>
       <div className="container mx-2">
       {note.length===0 && "Add stuff to see here"}
@@ -78,6 +78,7 @@ const Notes = (props) => {
         )
       })}
      </div>
+     <div style={{height:'40px'}}></div>
      </>
   )
 }

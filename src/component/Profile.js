@@ -109,7 +109,8 @@ const Profile = (props) => {
   };
 
   return (
-    <div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-3">
+    <>
+    {<div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-5">
       <button
         type="button"
         ref={ref}
@@ -279,7 +280,9 @@ const Profile = (props) => {
           </button>
         </div>
       )}
-    </div>
+    </div>}
+    <div style={{height:"40px"}}></div>
+    </>
   );
 };
 

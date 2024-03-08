@@ -4,25 +4,25 @@ export default function Intro() {
   return (
     <div>
         <div className='p-5 rounded-4 bg-light shadow my-5 '>
-       <h1>What do we provide here</h1>
-      <p className='mx-5 fs-4 text-center'>
-      We here at Mystuffsafe.com provide you a personal space to write and express your personal thoughts and feelings like a digital diary or use it as an online short note keeper. Write whatever you desire with the assurance that it is accessible only by you.
+       <h1 className='fs-2'>What do we provide here :</h1>
+      <p className='mx-md-5 fs-5 text-md-center'>
+      We here at Mystuffsafe provide you a personal space to write and express your personal thoughts and feelings like a digital diary or use it as an online short note keeper. Write whatever you desire with the assurance that it is accessible only by you.
       </p>
       </div>
       <div className='p-5 rounded-4 bg-white shadow my-5'>
-      <h1>Where your data is kept</h1>
-      <p className="mx-5 fs-4 text-center">The data of Mystuffsafe.com and your data is kept on the secured cloud, allowing you to access your data from anywhere, anytime. The cloud is spread over the globe and the data is decentralized in order to keep your data safe even if a server is compromised. </p>
+      <h1 className='fs-2'>Where your data is kept :</h1>
+      <p className="mx-md-5 fs-5 text-md-center">The data of Mystuffsafe data is kept on the secured cloud, allowing you to access your data from anywhere, anytime. The cloud is spread over the globe and the data is decentralized in order to keep your data safe even if a server is compromised. </p>
       </div>
       <div className='p-5 rounded-4 shadow my-5 bg-light'>
-      <h1>How we keep your data secured</h1>
-      <p className="mx-5 fs-4 text-center">We here at Mystuffsafe.com assure you that the data you store here is going nowhere; the data can only be accessed if and only if the correct ID and password are entered.</p>
-      <p className="mx-5 fs-4 text-center">Even your passwords are stored securely here with us using the latest salt, pepper, and hash technique to encrypt your password, ensuring that your account is secured.</p>
+      <h1 className='fs-2'>How we keep your data secured :</h1>
+      <p className="mx-md-5 fs-5 text-md-center">We here at Mystuffsafe assure you that the data you store here is going nowhere; the data can only be accessed if and only if the correct ID and password are entered.</p>
+      <p className="mx-md-5 fs-5 text-md-center">Even your passwords are stored securely here with us using the latest salt, pepper, and hash technique to encrypt your password, ensuring that your account is secured.</p>
       </div>
       <div className='p-5 rounded-4 shadow my-5 bg-light'>
-        <h1>Technical aspects</h1>
-        <p className="mx-5 fs-4 text-left">This site is built using ReactJS, Bootstrap, and NodeJS. This site is an example of a notes site out there, like Google Notes.</p>
-        <p className="mx-5 fs-4">This site comprises of:</p>
-        <ul className="mx-5 fs-4">
+        <h1 className='fs-2'>Technical aspects :</h1>
+        <p className="mx-md-5 fs-5">This site is built using ReactJS, Bootstrap, and NodeJS. This site is an example of a notes site out there, like Google Notes.</p>
+        <p className="mx-md-5 fs-5">This site comprises of:</p>
+        <ul className="mx-md-5 fs-5">
           <li><strong>MongoDB</strong> - This is used as the online database to store its data on the cloud.</li>
           <li><strong>Mongoose</strong> - This is used to embed the MongoDB and to connect to the MongoDB.</li>
           <li><strong>Nodemon</strong> - Used to run the backend and create a backend API server, receive and respond to requests, and reload the server every time changes occur or on saving the file.</li>

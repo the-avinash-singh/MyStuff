@@ -48,7 +48,8 @@ const Signup = (props) => {
     }
   };
   return (
-    <div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-3">
+    <>
+    <div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-5">
       <h2 className="mb-4">Signin to Mystuffsafe.com</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -142,6 +143,8 @@ const Signup = (props) => {
         </Link>
       </div>
     </div>
+      <div style={{height:"40px"}}></div>
+    </>
   );
 };
 
