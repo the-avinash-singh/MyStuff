@@ -1,11 +1,12 @@
 import React from 'react'
-import spinner from "../images/spinner.gif"
+import spinner from "../images/spinner.svg"
+import "../css/Spinner.css"
 
 const Spinner = () => {
   return (
     <div>
-       <div className='text-center'>
-        <img className='my-3' src={spinner} alt="loading..." />
+       <div className='text-center spinner position'>
+        <img src={spinner} alt="loading..." />
       </div>
     </div>
   )

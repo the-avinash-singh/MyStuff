@@ -1,0 +1,8 @@
+.spinner{
+    height: 50vh;
+}
+.position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

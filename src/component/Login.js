@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import image from "../images/spinner.svg"
 
 const Login = (props) => {
   const [credentails, setCredentails] = useState({
@@ -8,7 +9,9 @@ const Login = (props) => {
     password: "",
   });
   let navigate = useNavigate();
+  const [load,setLoad]=useState(false)
   const handleSubmit = async (e) => {
+    setLoad(true)
     e.preventDefault();
     const response = await fetch(
       `https://backend-5pjd.onrender.com/api/auth/login`,
@@ -35,6 +38,7 @@ const Login = (props) => {
     } else {
       props.showAlert("invalid details", "danger");
     }
+    setLoad(false)
   };
   const onChange = (e) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value }); //3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
@@ -89,9 +93,12 @@ const Login = (props) => {
               minLength={6}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+              <img src={image} style={{width:"35px"}} alt=''/>
+              </div>
+              :<button type="submit" className="btn btn-primary">
             Login
-          </button>
+          </button>}
         </form>
         <div className="my-3">
           If you don't have an account then{" "}

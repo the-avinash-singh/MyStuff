@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import image from '../images/spinner.svg'
 
 const Signup = (props) => {
   const [credentails, setCredentails] = useState({
@@ -14,8 +15,10 @@ const Signup = (props) => {
   if (credentails.cpassword !== credentails.password) {
     match = false;
   }
+  const [load,setLoad]=useState(false)
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
+    setLoad(true)
     e.preventDefault();
     const { name, username, email, password } = credentails;
     if (!match) return;
@@ -40,6 +43,7 @@ const Signup = (props) => {
     } else {
       props.showAlert("invalid cradentials", "danger");
     }
+    setLoad(false)
   };
   const onChange = (e) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value }); //3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
@@ -132,9 +136,12 @@ const Signup = (props) => {
             Password missmatch.
           </span>
         </div>
-        <button type="submit" className="btn btn-primary" disabled={!match}>
+        {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+              <img src={image} style={{width:"35px"}} alt=""/>
+              </div>
+              :<button type="submit" className="btn btn-primary" disabled={!match}>
           SignUp
-        </button>
+        </button>}
       </form>
       <div className="my-3">
         Already have an account then{" "}

@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "./Spinner";
+import image from "../images/Pulse.svg"
 
 const Profile = (props) => {
+  const [load,setLoad]=useState(false)
   let navigate = useNavigate();
   useEffect(()=>{
     if(localStorage.getItem("token")===null){
@@ -27,6 +30,7 @@ const Profile = (props) => {
     match = false;
   }
   const handleSubmit = async (e) => {
+    setLoad(true)
     e.preventDefault();
     const { name, username, email, password } = credentails;
     if (!match) return;
@@ -52,6 +56,7 @@ const Profile = (props) => {
     } else {
       props.showAlert("invalid cradentials", "danger");
     }
+    setLoad(false)
   };
   const onChange = (e) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value }); //3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
@@ -110,7 +115,7 @@ const Profile = (props) => {
 
   return (
     <>
-    {<div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-5">
+    {credentails.name===""?<Spinner/>:<div className="mt-3 mx-auto bg-light shadow p-4 rounded-4 mb-5">
       <button
         type="button"
         ref={ref}
@@ -151,13 +156,16 @@ const Profile = (props) => {
               >
                 Close
               </button>
-              <button
+              {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+              <img src={image} style={{width:"35px"}} alt=""/>
+              </div>
+              :<button
                 type="button"
                 className="btn btn-danger"
                 onClick={delClick}
               >
                 Delete it
-              </button>
+              </button>}
             </div>
           </div>
         </div>
@@ -251,14 +259,17 @@ const Profile = (props) => {
         )}
         {edit && (
           <div className="d-flex justify-content-between">
-            <button
+            {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+              <img src={image} style={{width:"35px"}} alt=""/>
+              </div>
+              :<button
               type="submit"
               className="btn btn-primary"
               onClick={handleSubmit}
               disabled={!match}
             >
               Uplode
-            </button>
+            </button>}
             <div className="btn bg-black text-white" onClick={editCick}>
               Cancel
             </div>

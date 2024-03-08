@@ -2,6 +2,7 @@ import React, { useContext, useEffect,useRef,useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import NoteItem from './NoteItem';
 import {  useNavigate } from 'react-router-dom';
+import Spinner from './Spinner';
 
 const Notes = (props) => {
     const context=useContext(noteContext);
@@ -9,10 +10,10 @@ const Notes = (props) => {
     const {note,getNote,editNote}=context;
     useEffect(()=>{
       if(localStorage.getItem("token")===null){
-        navigate("/login")
+        navigate("/login");
       }  
       else{
-        getNote()  
+        getNote();
       }
       // eslint-disable-next-line
     },[])
@@ -26,10 +27,9 @@ const Notes = (props) => {
     }
     const clikced=(e)=>{
       editNote(notes.id,notes.etitle,notes.etag,notes.edescription)
-      refClose.current.click()
+      refClose.current.click();
       e.preventDefault();//this will prevent page reloading
       props.showAlert("Note updated successfully","success")
-
   }
   const onChange=(e)=>{
           setNotes({...notes,[e.target.name]:e.target.value})//3 dot-jo ha waha useke aage se likho, jo name attribute h uski value ko field value ke barabr kr do
@@ -72,7 +72,7 @@ const Notes = (props) => {
       <div className="container mx-2">
       {note.length===0 && "Add stuff to see here"}
       </div>
-      {note.map((note)=>{
+      {note.length===0?<Spinner/>:note.map((note)=>{
         return(
           <NoteItem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note}/>
         )
