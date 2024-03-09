@@ -3,7 +3,7 @@ import React from 'react'
 export default function Intro() {
   return (
     <div>
-        <div className='p-5 rounded-4 bg-light shadow my-5 '>
+        <div className='p-5 rounded-4 bg-light shadow mb-5 mt-4 '>
        <h1 className='fs-2'>What do we provide here :</h1>
       <p className='mx-md-5 fs-5 text-md-center'>
       We here at Mystuffsafe provide you a personal space to write and express your personal thoughts and feelings like a digital diary or use it as an online short note keeper. Write whatever you desire with the assurance that it is accessible only by you.

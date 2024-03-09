@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import image from '../images/spinner.svg'
+import image from '../images/Pulse.svg'
 
 const Signup = (props) => {
   const [credentails, setCredentails] = useState({
@@ -136,12 +136,14 @@ const Signup = (props) => {
             Password missmatch.
           </span>
         </div>
-        {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+        <div className="d-flex">
+        {load?<div className=" bg-primary rounded" style={{padding:"0.1rem 1.32rem"}}>
               <img src={image} style={{width:"35px"}} alt=""/>
               </div>
               :<button type="submit" className="btn btn-primary" disabled={!match}>
           SignUp
         </button>}
+        </div>
       </form>
       <div className="my-3">
         Already have an account then{" "}
@@ -150,7 +152,7 @@ const Signup = (props) => {
         </Link>
       </div>
     </div>
-      <div style={{height:"40px"}}></div>
+      <div style={{height:"30px"}}></div>
     </>
   );
 };

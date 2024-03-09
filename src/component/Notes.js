@@ -78,7 +78,7 @@ const Notes = (props) => {
         )
       })}
      </div>
-     <div style={{height:'40px'}}></div>
+     <div style={{height:'10px'}}></div>
      </>
   )
 }

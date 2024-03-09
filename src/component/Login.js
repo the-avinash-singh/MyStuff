@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import image from "../images/spinner.svg"
+import image from "../images/Pulse.svg"
 
 const Login = (props) => {
   const [credentails, setCredentails] = useState({
@@ -93,12 +93,14 @@ const Login = (props) => {
               minLength={6}
             />
           </div>
-          {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+          <div className="d-flex">
+          {load?<div className=" bg-primary rounded" style={{padding:"0.1rem 0.95rem"}}>
               <img src={image} style={{width:"35px"}} alt=''/>
               </div>
               :<button type="submit" className="btn btn-primary">
             Login
           </button>}
+          </div>
         </form>
         <div className="my-3">
           If you don't have an account then{" "}
@@ -107,7 +109,7 @@ const Login = (props) => {
           </Link>
         </div>
       </div>
-      <div style={{height:"40px"}}></div>
+      <div style={{height:"50px"}}></div>
     </>
   );
 };

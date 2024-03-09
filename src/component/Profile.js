@@ -292,7 +292,7 @@ const Profile = (props) => {
         </div>
       )}
     </div>}
-    <div style={{height:"40px"}}></div>
+    <div style={{height:"20px"}}></div>
     </>
   );
 };
