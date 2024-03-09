@@ -156,7 +156,7 @@ const Profile = (props) => {
               >
                 Close
               </button>
-              {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+              {load?<div className=" bg-danger rounded" style={{padding:"0.094rem 1.5723rem"}}>
               <img src={image} style={{width:"35px"}} alt=""/>
               </div>
               :<button
@@ -259,7 +259,7 @@ const Profile = (props) => {
         )}
         {edit && (
           <div className="d-flex justify-content-between">
-            {load?<div className=" bg-primary rounded" style={{padding:"0 1.33rem"}}>
+            {load?<div className=" bg-primary rounded" style={{padding:"0 1.3265rem"}}>
               <img src={image} style={{width:"35px"}} alt=""/>
               </div>
               :<button

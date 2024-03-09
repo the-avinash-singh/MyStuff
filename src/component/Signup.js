@@ -137,7 +137,7 @@ const Signup = (props) => {
           </span>
         </div>
         <div className="d-flex">
-        {load?<div className=" bg-primary rounded" style={{padding:"0.1rem 1.32rem"}}>
+        {load?<div className=" bg-primary rounded" style={{padding:"0.094rem 1.321rem"}}>
               <img src={image} style={{width:"35px"}} alt=""/>
               </div>
               :<button type="submit" className="btn btn-primary" disabled={!match}>

@@ -94,7 +94,7 @@ const Login = (props) => {
             />
           </div>
           <div className="d-flex">
-          {load?<div className=" bg-primary rounded" style={{padding:"0.1rem 0.95rem"}}>
+          {load?<div className=" bg-primary rounded" style={{padding:"0.094rem 0.9464rem"}}>
               <img src={image} style={{width:"35px"}} alt=''/>
               </div>
               :<button type="submit" className="btn btn-primary">
