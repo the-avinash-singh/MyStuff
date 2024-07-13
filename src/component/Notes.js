@@ -8,12 +8,14 @@ const Notes = (props) => {
     const context=useContext(noteContext);
     let navigate=useNavigate();
     const {note,getNote,editNote}=context;
+    const [loding,setLoding]=useState(false)
     useEffect(()=>{
       if(localStorage.getItem("token")===null){
         navigate("/login");
       }  
       else{
         getNote();
+        setLoding(true)
       }
       // eslint-disable-next-line
     },[])
@@ -72,7 +74,7 @@ const Notes = (props) => {
       <div className="container mx-2">
       {note.length===0 && "Add stuff to see here"}
       </div>
-      {note.length===0?<Spinner/>:note.map((note)=>{
+      {loding?<Spinner/>:note.map((note)=>{
         return(
           <NoteItem key={note._id} updateNote={updateNote} showAlert={props.showAlert} note={note}/>
         )
