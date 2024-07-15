@@ -4,8 +4,10 @@ const NoteState=(props)=>{
   const host="https://backend-5pjd.onrender.com"
 
   const [note,setNote]=useState([])
+  const [loading,setLoading]=useState(false)
 //get all notes
   const getNote=async()=>{
+    setLoading(true)
     try {
       
       //call the api
@@ -18,6 +20,7 @@ const NoteState=(props)=>{
       });
       const json=await response.json();
       setNote(json.reverse());
+      setLoading(false)
     } catch (error) {
       console.log(error)
     }
@@ -82,7 +85,7 @@ const editNote=async (id,title,tag,description)=>{
   setNote(newNotes);
   }
    //here the value is what send for providing data
-      return (<NoteContext.Provider value={{note,addNote,deleteNote,editNote,getNote}}> 
+      return (<NoteContext.Provider value={{note,loading,addNote,deleteNote,editNote,getNote}}> 
         {props.children}
     </NoteContext.Provider>)
 

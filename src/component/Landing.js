@@ -6,12 +6,6 @@ import "../css/Landing.css"
 
 const Landing = () => {
   let navigate = useNavigate();
-  useEffect(()=>{
-    if(localStorage.getItem("token")){
-      navigate("/home")
-    } 
-    // eslint-disable-next-line 
-  },[])
   const clicked=()=>{
           navigate('/login')
   }
