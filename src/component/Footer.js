@@ -47,7 +47,7 @@ export default function Footer()
         </div>
             <div className='d-flex justify-content-center align-items-center mt-3 pb-5'>
           <ul className='me-4'>
-            <li><a href='https://eazyres.netlify.app/' target ="blank" className='text-decoration-none text-white'>VEazyRes</a></li>
+            <li><a href='https://eazyres.netlify.app/' target ="blank" className='text-decoration-none text-white'>EazyRes</a></li>
             <li><a href='https://stellular-biscuit-e8c785.netlify.app/' target ="blank" className='text-decoration-none text-white'>Viemo clone</a></li>
             <li><a href='https://github.com/the-avinash-singh/Newswala.git' target ="blank" className='text-decoration-none text-white'>NewsWala</a></li>
             <li><a href='https://github.com/the-avinash-singh/cropper.git' target ="blank" className='text-decoration-none text-white'>Cropper</a></li>
