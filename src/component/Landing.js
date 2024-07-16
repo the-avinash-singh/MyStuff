@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import sideImg from "../images/sideImg.png"
 import sideImgEarth from "../images/sideImgEarth.gif"
