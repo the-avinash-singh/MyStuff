@@ -25,7 +25,7 @@ export default function Footer()
   }
 
   const twitter =()=>{
-    window.open('https://twitter.com/Avinash65588482','_blank')
+    window.open('https://x.com/the_avinash_dev','_blank')
   }
 
   const github =()=>{
